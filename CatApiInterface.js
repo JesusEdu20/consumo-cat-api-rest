@@ -97,8 +97,6 @@ export class CatApiInterface{
             const rawBody = JSON.stringify({ 
                 image_id: idBody,
                  });
-
-            
             
             if(!isLiked){
                 this.addFavoriteCat(rawBody, this.apiKey)
