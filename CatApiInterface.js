@@ -27,7 +27,7 @@ export class CatApiInterface{
                     headers: { 'Content-Type': 'application/json'} ,
                     body: body
                 }
-            )
+            )    
     } 
 
     async deleteFavorites (id, apiKey){
@@ -100,10 +100,12 @@ export class CatApiInterface{
             
             if(!isLiked){
                 this.addFavoriteCat(rawBody, this.apiKey)
+                cart.remove()
                 
             }
             else{
                 this.deleteFavorites(idBody, this.apiKey);
+                cart.remove()
             }
 
         })

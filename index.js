@@ -11,7 +11,7 @@ const randomBtn = document.querySelector(".random__button");
 
 const catInterface = new CatApiInterface(API_KEY, cartContainer); 
 
-
+const formData = new FormData()
 
 //EVENTS
 randomBtn.addEventListener("click", () => {
