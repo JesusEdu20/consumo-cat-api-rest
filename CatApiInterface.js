@@ -112,6 +112,19 @@ export class CatApiInterface{
     
         return cart
     }
+
+    async upLoadImage(){
+        const form = document.getElementById('form-data')
+        const formData = new FormData(form);
+        
+        const res = await fetch('https://api.thecatapi.com/v1/images/upload', {
+            method: 'POST',
+            headers:{ /* 'Content-Type': 'multipart/form-data' */
+            'X-API-KEY': this.apiKey
+            },
+            body: formData
+        })
+    }
     
 }
 
