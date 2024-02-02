@@ -13,20 +13,20 @@ const catInterface = new CatApiInterface(API_KEY, cartContainer);
 
 //EVENTS
 randomBtn.addEventListener("click", () => {
-    catInterface.getRamdomCats(10);
+    catInterface.getRandomCats(10);
 })
 
 favBtn.addEventListener("click", () => {
     catInterface.getFavoritesCats(10);
 })
 
-sendButton.addEventListener("click", (event)=>{
+/* sendButton.addEventListener("click", (event)=>{
     event.preventDefault()
     catInterface.upLoadImage()
-})
+}) */
 
 //Init
-catInterface.getRamdomCats(10);
+catInterface.getRandomCats(10);
 
 
 
