@@ -7,7 +7,6 @@ export class CatApiInterface{
     async getRandomCats(limit){
         const response = await fetch(`https://api.thecatapi.com/v1/images/search?limit=${limit}&api_key=${this.apiKey}`);
         const data = await response.json();
-        console.log(data)
         this.renderCarts(data, this.rootElement);
     } 
 
