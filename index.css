@@ -35,30 +35,33 @@ li{
     border: 1px solid rgb(45, 47, 49);
     border-radius: 10px;
     list-style: none;
-    transition: transform 0.7s;
+    
     cursor: pointer;
     padding: 20px;
 }
 
-li:active{
-    /* transform: scale(1.6); */
-    border: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.4);
-    span{
-        display: none;
-    }
-}
+
 
 img{
     width: 90%;
     height: 90%;
     border-radius: 10px;
     object-fit: cover;
+    transition: transform 0.7s;
 }
 
+img:active{
+    /* transform: scale(1.6); */
+    border: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    object-fit: contain;
+    span{
+        display: none;
+    }
+}
 
 .button-container{
     display: flex;

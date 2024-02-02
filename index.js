@@ -10,14 +10,33 @@ const randomBtn = document.querySelector(".random__button");
 
 const catInterface = new CatApiInterface(API_KEY, cartContainer); 
 
+function initialCatDisplay(){
+    
+    if(window.localStorage.getItem('view')==='random'){
+        catInterface.getRandomCats(10);
+        randomBtn.style.backgroundColor = '#111111'
+    }
+    else{
+        catInterface.getFavoritesCats(10);
+        favBtn.style.backgroundColor = '#111111';
+    }
+    
+}
+
 
 //EVENTS
 randomBtn.addEventListener("click", () => {
     catInterface.getRandomCats(10);
+    window.localStorage.setItem('view', 'random')
+    randomBtn.style.backgroundColor = '#111111'
+    favBtn.style.backgroundColor = 'rgb(45, 47, 49)'
 })
 
 favBtn.addEventListener("click", () => {
     catInterface.getFavoritesCats(10);
+    window.localStorage.setItem('view', 'favorite')
+    favBtn.style.backgroundColor = '#111111';
+    randomBtn.style.backgroundColor = 'rgb(45, 47, 49)'
 })
 
 /* sendButton.addEventListener("click", (event)=>{
@@ -26,7 +45,6 @@ favBtn.addEventListener("click", () => {
 }) */
 
 //Init
-catInterface.getRandomCats(10);
 
-
+initialCatDisplay()
 
